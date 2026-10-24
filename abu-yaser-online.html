@@ -1,0 +1,557 @@
+<title>أرشيف أبو ياسر</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<script>document.documentElement.setAttribute('dir','rtl');document.documentElement.setAttribute('lang','ar');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: a deep-green family header band, then a summary row, alert + birthday panels, and member cards grouped by household */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --surface2:#f8faf7; --ink:#17231f; --muted:#5f6d68; --line:#dfe5e0;
+  --brand:#0e4d45; --brand2:#146357; --brand-ink:#ffffff; --gold:#b5893a; --gold-soft:#f4ead6; --gold-ink:#6b4c14;
+  --red:#b3261e; --red-soft:#fbe5e3; --amber:#94590a; --amber-soft:#fcefd9; --green:#2c7a4b; --green-soft:#e1f1e7;
+  --chip:#eceff0; --overlay:rgba(8,24,20,.6);
+  --shadow:0 1px 2px rgba(10,40,30,.05),0 6px 18px rgba(10,40,30,.06);
+  --font:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1715; --surface:#16211e; --surface2:#1b2825; --ink:#e6eeea; --muted:#9db0a9; --line:#2a3a36;
+  --brand:#0b3c36; --brand2:#2a8a7a; --brand-ink:#ffffff; --gold:#d6ad62; --gold-soft:#3a3020; --gold-ink:#f0d9a8;
+  --red:#ff8a80; --red-soft:#3b1d1b; --amber:#f2b860; --amber-soft:#3a2c14; --green:#7fd3a0; --green-soft:#16322a;
+  --chip:#24322f; --overlay:rgba(0,0,0,.7); --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1715; --surface:#16211e; --surface2:#1b2825; --ink:#e6eeea; --muted:#9db0a9; --line:#2a3a36;
+  --brand:#0b3c36; --brand2:#2a8a7a; --brand-ink:#ffffff; --gold:#d6ad62; --gold-soft:#3a3020; --gold-ink:#f0d9a8;
+  --red:#ff8a80; --red-soft:#3b1d1b; --amber:#f2b860; --amber-soft:#3a2c14; --green:#7fd3a0; --green-soft:#16322a;
+  --chip:#24322f; --overlay:rgba(0,0,0,.7); --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25); color-scheme:dark}
+*{box-sizing:border-box}
+html,body{direction:rtl;text-align:right}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);font-size:15.5px;line-height:1.65}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{background:var(--brand);color:var(--brand-ink)}
+header.top .wrap{padding-block:18px 0}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mono{width:56px;height:56px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-size:28px;font-weight:800;color:#0b2b26;flex:none}
+.brand h1{margin:0;font-size:26px;font-weight:800;line-height:1.25;text-wrap:balance}
+.brand p{margin:0;opacity:.85;font-size:13.5px}
+.hsearch{margin-inline-start:auto;display:flex;gap:6px;flex:1 1 260px;max-width:380px}
+.hsearch input{flex:1;min-width:0;border:0;border-radius:10px;padding:9px 12px;background:#fff;color:#17231f}
+.nav{display:flex;gap:2px;margin-top:14px;overflow-x:auto}
+.nav button{background:transparent;border:0;color:rgba(255,255,255,.82);padding:10px 16px;border-radius:10px 10px 0 0;cursor:pointer;font-weight:700;white-space:nowrap}
+.nav button.active{background:var(--bg);color:var(--brand2)}
+:root:not([data-theme="dark"]) .nav button.active{color:var(--brand)}
+.nav button:hover:not(.active){background:rgba(255,255,255,.08)}
+.pill{display:inline-block;min-width:20px;padding:0 6px;border-radius:10px;background:#c62828;color:#fff;font-size:12px;margin-inline-start:6px;text-align:center}
+main{padding-block:22px 40px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:18px}
+.stack{display:flex;flex-direction:column;gap:16px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.between{justify-content:space-between}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid2>*{min-width:0}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.stat b{display:block;font-size:28px;font-weight:800;color:var(--brand2);line-height:1.2;font-variant-numeric:tabular-nums}
+:root:not([data-theme="dark"]) .stat b{color:var(--brand)}
+.stat.r b{color:var(--red)}.stat.a b{color:var(--amber)}
+.stat span{color:var(--muted);font-size:13.5px}
+.btn{background:var(--brand);color:var(--brand-ink);border:0;border-radius:10px;padding:8px 14px;cursor:pointer;font-weight:700;white-space:nowrap}
+.btn:hover{background:var(--brand2)}
+.btn:disabled{opacity:.55;cursor:default}
+.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--gold)}
+.btn.danger{background:var(--surface);color:var(--red);border:1px solid var(--red-soft)}
+.btn.gold{background:var(--gold);color:#1d1406}
+.btn.sm{padding:5px 10px;font-size:13.5px}
+h2{font-size:18px;margin:0 0 12px;font-weight:800}
+h3{font-size:16px;margin:0 0 10px;font-weight:700}
+.muted{color:var(--muted)}.small{font-size:13.5px}
+.inp{border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:var(--surface2);min-width:0;width:240px;max-width:100%}
+.members{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.mcard{background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center;cursor:pointer;transition:transform .15s,border-color .15s;position:relative;min-width:0}
+.mcard:hover{border-color:var(--gold);transform:translateY(-2px)}
+.mcard .nm{font-weight:700;overflow-wrap:anywhere}
+.mcard .flag{position:absolute;top:8px;inset-inline-start:8px}
+.av{width:84px;height:84px;border-radius:50%;object-fit:cover;background:var(--gold-soft);display:grid;place-items:center;margin:0 auto 8px;font-size:32px;color:var(--gold-ink);font-weight:800;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--gold-soft);flex:none}
+.av.lg{width:128px;height:128px;font-size:50px;margin:0}
+.av.sm{width:38px;height:38px;font-size:16px;margin:0;border-width:2px}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.b-expired{background:var(--red-soft);color:var(--red)}
+.b-soon{background:var(--amber-soft);color:var(--amber)}
+.b-ok{background:var(--green-soft);color:var(--green)}
+.b-none{background:var(--chip);color:var(--muted)}
+.list .item{display:flex;align-items:center;gap:10px;padding:9px 6px;border-bottom:1px dashed var(--line);cursor:pointer;border-radius:8px}
+.list .item:hover{background:var(--surface2)}
+.list .item:last-child{border-bottom:0}
+.list .grow{flex:1;min-width:0}
+.gtitle{font-weight:800;color:var(--gold);margin:14px 0 10px;display:flex;align-items:center;gap:8px}
+.gtitle:first-child{margin-top:0}
+.gtitle::after{content:"";flex:1;height:1px;background:var(--line)}
+.profile{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+.pinfo{flex:1;min-width:220px}
+.facts{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+.notes{margin-top:12px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14.5px;white-space:pre-wrap;overflow-wrap:anywhere}
+.pact{display:flex;flex-direction:column;gap:8px}
+.docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+@media(max-width:400px){.docs{grid-template-columns:1fr}}
+.doc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;border-inline-start:5px solid var(--chip);min-width:0}
+.doc.expired{border-inline-start-color:var(--red)}.doc.soon{border-inline-start-color:var(--amber)}.doc.ok{border-inline-start-color:var(--green)}
+.dt{font-weight:800;font-size:16px}
+.kv{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px 12px;margin-top:10px}
+.kv span{display:block;color:var(--muted);font-size:12.5px}
+.kv b{font-weight:700;font-size:14px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.thumb{width:76px;height:76px;border-radius:8px;object-fit:cover;border:1px solid var(--line);cursor:pointer;background:var(--surface2);display:grid;place-items:center;font-size:12px;text-align:center;overflow:hidden;padding:0}
+.dacts{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+.who{font-size:12.5px;color:var(--muted);margin-top:8px}
+.tblwrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:start}
+th{color:var(--muted);font-weight:700;background:var(--surface2)}
+td{font-variant-numeric:tabular-nums}
+tr.click{cursor:pointer}tr.click:hover td{background:var(--surface2)}
+.lnk{color:var(--brand2);font-size:13.5px;font-weight:700;cursor:pointer;background:none;border:0;padding:0}
+.modal-bg{position:fixed;inset:0;background:var(--overlay);display:grid;place-items:center;z-index:50;padding:16px}
+.modal{background:var(--surface);color:var(--ink);border-radius:16px;width:min(640px,100%);max-height:92vh;overflow:auto;padding:22px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form>*{min-width:0}
+@media(max-width:600px){.form{grid-template-columns:1fr}}
+.form .full{grid-column:1/-1}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:13.5px;color:var(--muted);font-weight:700}
+label.f input,label.f select,label.f textarea{border:1px solid var(--line);border-radius:9px;padding:8px 10px;background:var(--surface2);color:var(--ink);font-weight:400;width:100%}
+textarea{min-height:84px;resize:vertical}
+.mfoot{margin-top:18px}
+.modal.wide{width:min(760px,100%)}
+.slots-h{grid-column:1/-1;margin:10px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:16px;font-weight:800}
+.slot{grid-column:1/-1;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0;background:var(--surface2);min-width:0}
+.slot legend{font-weight:800;padding:0 6px;color:var(--brand2)}
+:root:not([data-theme="dark"]) .slot legend{color:var(--brand)}
+.slotgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.slotgrid>*{min-width:0}
+.slot .have{font-size:12.5px;color:var(--green);margin-top:6px}
+.expin{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--muted);font-weight:700}
+.expin input{border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:var(--surface2);color:var(--ink);font-weight:400}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:60}
+.lb .stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:64px max(64px,env(safe-area-inset-left,0px)) 48px}
+.lb img{max-width:100%;max-height:100%;border-radius:6px}
+.lb iframe{width:100%;height:100%;border:0;background:#fff;border-radius:6px}
+.lb .cap{position:absolute;bottom:calc(12px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#fff;font-size:14px;padding-inline:16px}
+.lb .tb{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-end:14px;display:flex;gap:8px;flex-wrap:wrap}
+.lb .nb{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;border:0;font-size:30px;width:46px;height:64px;border-radius:10px;cursor:pointer}
+.lb .prev{right:10px}.lb .next{left:10px}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:max(20px,env(safe-area-inset-left,0px));background:var(--brand);color:#fff;padding:12px 18px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.25);z-index:80;max-width:min(420px,calc(100vw - 40px))}
+.toast.err{background:#a3221b}
+.banner{border-radius:12px;padding:12px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.banner.r{background:var(--red-soft);color:var(--red)}
+.banner.g{background:var(--gold-soft);color:var(--gold-ink)}
+.empty{text-align:center;padding:28px 16px;color:var(--muted)}
+.empty .big{font-size:40px;line-height:1.2;color:var(--gold)}
+.authbox{max-width:420px;margin:30px auto;text-align:center}
+.authbox .mono{margin:0 auto 10px}
+.authbox form{display:flex;flex-direction:column;gap:12px;text-align:right;margin-top:14px}
+.authbox .btn{padding:10px 14px}
+.navuser{margin-inline-start:auto;display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);font-size:13.5px;padding:0 6px 8px;white-space:nowrap}
+.navuser button{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:8px;padding:4px 10px;cursor:pointer;font-weight:700}
+.acct{display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px dashed var(--line);flex-wrap:wrap}
+.acct:last-child{border-bottom:0}
+.pick{border:1px solid var(--line);border-radius:10px;padding:8px 12px;max-height:280px;overflow:auto;background:var(--surface2);margin-top:6px}
+.pick .gt{font-weight:800;color:var(--gold);font-size:13px;margin-top:6px}
+.pick label{display:inline-flex;align-items:center;gap:6px;margin-inline-end:14px;font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding-block:6px 30px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <div class="mono" aria-hidden="true">ع</div>
+      <div>
+        <h1>أرشيف أبو ياسر</h1>
+        <p>عمار أحمد النشابة · المرجع العائلي المشترك للأفراد والمستندات</p>
+      </div>
+      <form class="hsearch" id="gform"><input id="gq" placeholder="ابحث عن فرد أو مستند أو رقم…" aria-label="بحث"><button class="btn gold" type="submit">بحث</button></form>
+    </div>
+    <nav class="nav">
+      <button data-act="nav" data-v="home">الرئيسية</button>
+      <button data-act="nav" data-v="alerts">التنبيهات<span class="pill" id="navAlertCount" hidden></span></button>
+      <button data-act="nav" data-v="settings">الإعدادات</button>
+      <span class="navuser" id="navUser" hidden><span id="navUserName"></span><button data-act="logout">خروج</button></span>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="main"><div class="panel empty">جارٍ تحميل الأرشيف…</div></main>
+<footer class="wrap">أرشيف عائلي خاص بعمار أحمد النشابة (أبو ياسر) — يُحدَّث لجميع المشاركين لحظياً</footer>
+<input type="file" id="importInp" accept=".json,application/json" hidden>
+
+<script>
+/* ================= حالة عامة ================= */
+let BOOTING=true, DB=null, ASSETS=null, USER=null, DL=null, MYID=null, CANWRITE=true, ONLINE=false;
+const S={members:[],docs:[],allMembers:[],allDocs:[],settings:{remindDays:60},got:{m:false,d:false}};
+let view={name:'home',q:''};
+const AUTH={loaded:false,list:[],me:null,owner:false,ownerReset:false};
+
+/* ================= أدوات ================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,9);
+const uniq=a=>[...new Set(a.filter(Boolean))];
+const norm=s=>String(s||'').toLowerCase().replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[ً-ْ]/g,'');
+const blobUrl=id=>'/_blob/'+id;
+function toast(msg,err){const t=document.createElement('div');t.className='toast'+(err?' err':'');t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),4500);}
+function parseD(s){if(!s)return null;const[y,m,d]=String(s).split('-').map(Number);if(!y)return null;return new Date(y,m-1,d);}
+function today(){const t=new Date();return new Date(t.getFullYear(),t.getMonth(),t.getDate());}
+function daysUntil(s){const d=parseD(s);return d?Math.round((d-today())/864e5):null;}
+function fmtD(s){const d=parseD(s);return d?d.toLocaleDateString('ar-u-nu-latn',{day:'numeric',month:'long',year:'numeric'}):'—';}
+function daysTxt(n){if(n===1)return 'يوم واحد';if(n===2)return 'يومين';if(n>=3&&n<=10)return n+' أيام';return n+' يوماً';}
+function age(s){const b=parseD(s);if(!b)return null;const t=today();let a=t.getFullYear()-b.getFullYear();if(t.getMonth()<b.getMonth()||(t.getMonth()===b.getMonth()&&t.getDate()<b.getDate()))a--;return a;}
+function nextBday(s){const b=parseD(s);if(!b)return null;const t=today();let n=new Date(t.getFullYear(),b.getMonth(),b.getDate());if(n<t)n=new Date(t.getFullYear()+1,b.getMonth(),b.getDate());return{days:Math.round((n-t)/864e5),turns:n.getFullYear()-b.getFullYear(),date:n};}
+const bdayLabel=nb=>nb.days===0?'اليوم 🎉':(nb.days===1?'غداً':'بعد '+daysTxt(nb.days));
+const DOC_TYPES=[['passport','جواز السفر','🛂'],['cpr','البطاقة السكانية (الهوية)','🪪'],['license','رخصة السياقة','🚗'],['vehicle','ملكية المركبة','📄'],['birth','شهادة الميلاد','👶'],['edu','شهادة دراسية','🎓'],['insurance','وثيقة تأمين','🛡️'],['property','عقد / وثيقة ملكية','🏠'],['other','مستند آخر','📁']];
+const dtype=k=>DOC_TYPES.find(t=>t[0]===k)||DOC_TYPES[DOC_TYPES.length-1];
+const byId=id=>S.members.find(m=>m.id===id);
+function docStatus(d){const n=daysUntil(d.expiryDate);if(n===null)return{k:'none',label:'بدون تاريخ انتهاء',n:99999};
+  if(n<0)return{k:'expired',label:'منتهي منذ '+daysTxt(-n),n};
+  const r=+d.remindDays||+S.settings.remindDays||60;
+  if(n<=r)return{k:'soon',label:n===0?'ينتهي اليوم':'ينتهي بعد '+daysTxt(n),n};
+  return{k:'ok',label:'ساري المفعول',n};}
+const alertsList=()=>S.docs.map(d=>({d,s:docStatus(d)})).filter(o=>o.s.k==='expired'||o.s.k==='soon').sort((a,b)=>a.s.n-b.s.n);
+const upcomingBdays=lim=>S.members.map(x=>({x,b:nextBday(x.birthDate)})).filter(o=>o.b&&o.b.days<=lim).sort((a,b)=>a.b.days-b.b.days);
+function avatar(x,cls=''){return x.photo?`<img class="av ${cls}" src="${blobUrl(esc(x.photo))}" alt="">`:`<div class="av ${cls}">${esc((x.name||'؟').trim().charAt(0))}</div>`;}
+const isImg=f=>/^image\//.test(f.type||'');
+const W=()=>CANWRITE&&ONLINE;
+
+/* ================= الدخول ================= */
+const hex=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');
+async function sha(t){return hex(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)));}
+async function pbk(pw,salt){const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveBits']);return hex(await crypto.subtle.deriveBits({name:'PBKDF2',salt:new TextEncoder().encode(salt),iterations:150000,hash:'SHA-256'},k,256));}
+const unorm=u=>norm(String(u||'').trim()).replace(/\s+/g,' ');
+async function acctId(u){return 'u'+(await sha('abu-yaser:'+unorm(u))).slice(0,32);}
+function sess(v){try{if(v===undefined)return JSON.parse(sessionStorage.getItem('aby-sess')||'null');if(v===null)sessionStorage.removeItem('aby-sess');else sessionStorage.setItem('aby-sess',JSON.stringify(v));}catch(_){return null;}}
+function applyScope(){const me=AUTH.me;
+  if(!me||me.scope!=='some'){S.members=S.allMembers;S.docs=S.allDocs;return;}
+  const ok=new Set(me.memberIds||[]);S.members=S.allMembers.filter(x=>ok.has(x.id)||(x.createdByAcct&&x.createdByAcct===me.id));
+  const ids=new Set(S.members.map(x=>x.id));S.docs=S.allDocs.filter(d=>ids.has(d.memberId));}
+function resolveMe(){const sv=sess();AUTH.me=sv?AUTH.list.find(a=>a.id===sv.id&&String(a.hash).slice(0,16)===sv.h)||null:(AUTH.me&&AUTH.list.find(a=>a.id===AUTH.me.id&&a.hash===AUTH.me.hash))||null;}
+async function createAcct(u,p,extra={}){const id=await acctId(u);const salt=uid()+uid();const hash=await pbk(p,salt);const o={scope:'all',memberIds:[],...extra,username:u.trim(),salt,hash,createdAt:Date.now(),createdBy:MYID||null};await DB.collection('logins').doc(id).set(o);return{id,...o};}
+function signIn(a){AUTH.me=a;applyScope();sess({id:a.id,h:String(a.hash).slice(0,16)});AUTH.ownerReset=false;view={name:'home',q:''};render();}
+function loginHtml(){return `<div class="authbox panel"><div class="mono" aria-hidden="true">ع</div><h2 style="margin:0">أرشيف أبو ياسر</h2><p class="muted small" style="margin:4px 0 0">أدخل اسم المستخدم وكلمة المرور للمتابعة</p>
+  <form id="loginForm" novalidate><label class="f">اسم المستخدم<input id="lg-u" autocomplete="username" required></label><label class="f">كلمة المرور<input id="lg-p" type="password" autocomplete="current-password" required></label><div id="lg-err" class="small" style="color:var(--red);min-height:1.2em"></div><button class="btn" type="submit">دخول</button></form>
+  ${!AUTH.owner&&(!AUTH.list.length||!CANWRITE)?`<div class="banner g small" style="margin-top:12px;text-align:right">حسابك في Claude لم يُمنح صلاحية الدخول إلى الأرشيف بعد. اطلب من أبو ياسر أن يدعوك ببريدك الإلكتروني بصلاحية «محرّر»، ثم افتح الرابط من جديد.</div>`:''}
+  ${AUTH.owner?'<p class="small" style="margin-bottom:0"><button class="lnk" data-act="ownerSetup">نسيت كلمة المرور؟ إنشاء حساب دخول جديد (لصاحب الأرشيف)</button></p>':'<p class="muted small" style="margin-bottom:0">ليس لديك حساب؟ اطلب من أبو ياسر إنشاء حساب لك.</p>'}</div>`;}
+function setupHtml(){if(!AUTH.owner)return `<div class="authbox panel"><div class="mono" aria-hidden="true">ع</div><h2>أرشيف أبو ياسر</h2><p class="muted">لم تُفعَّل حسابات الدخول بعد. سيُرسل إليك أبو ياسر اسم المستخدم وكلمة المرور.</p></div>`;
+  return `<div class="authbox panel"><div class="mono" aria-hidden="true">ع</div><h2 style="margin:0">${AUTH.list.length?'إنشاء حساب دخول جديد':'تفعيل الدخول بكلمة مرور'}</h2><p class="muted small" style="margin:4px 0 0">${AUTH.list.length?'تظهر هذه الشاشة لك وحدك بصفتك صاحب الأرشيف. إذا كتبت اسم مستخدم موجوداً تُستبدل كلمة مروره.':'أنشئ حسابك أولاً، ثم أضف حسابات أفراد العائلة من صفحة الإعدادات.'}</p>
+  <form id="setupForm" novalidate><label class="f">اسم المستخدم<input id="su-u" autocomplete="username" required></label><label class="f">كلمة المرور (4 أحرف على الأقل)<input id="su-p" type="password" autocomplete="new-password" required></label><label class="f">تأكيد كلمة المرور<input id="su-p2" type="password" autocomplete="new-password" required></label><div id="su-err" class="small" style="color:var(--red);min-height:1.2em"></div><button class="btn" type="submit">حفظ والدخول</button></form>
+  ${AUTH.list.length?'<p class="small" style="margin-bottom:0"><button class="lnk" data-act="cancelSetup">رجوع إلى تسجيل الدخول</button></p>':''}</div>`;}
+function bindAuth(){const lf=$('#loginForm');if(lf)lf.onsubmit=async e=>{e.preventDefault();const err=$('#lg-err');const b=lf.querySelector('button');err.textContent='';
+    const u=$('#lg-u').value,p=$('#lg-p').value;if(!u.trim()||!p){err.textContent='اكتب اسم المستخدم وكلمة المرور.';return;}
+    b.disabled=true;b.textContent='جارٍ التحقق…';
+    try{const id=await acctId(u);const a=AUTH.list.find(x=>x.id===id);if(a&&await pbk(p,a.salt)===a.hash){signIn(a);return;}err.textContent=AUTH.list.length?'اسم المستخدم أو كلمة المرور غير صحيحة.':'حسابك في Claude لم يُمنح صلاحية الدخول إلى الأرشيف بعد. اطلب من أبو ياسر أن يدعوك ببريدك الإلكتروني بصلاحية «محرّر»، ثم افتح الرابط من جديد.';}catch(_){err.textContent='تعذّر التحقق، أعد المحاولة.';}
+    b.disabled=false;b.textContent='دخول';};
+  const sf=$('#setupForm');if(sf)sf.onsubmit=async e=>{e.preventDefault();const err=$('#su-err');const b=sf.querySelector('button');err.textContent='';
+    const u=$('#su-u').value,p=$('#su-p').value,p2=$('#su-p2').value;
+    if(!u.trim())return err.textContent='اكتب اسم المستخدم.';if(p.length<4)return err.textContent='كلمة المرور قصيرة؛ اكتب 4 أحرف على الأقل.';if(p!==p2)return err.textContent='كلمتا المرور غير متطابقتين.';
+    b.disabled=true;try{signIn(await createAcct(u,p));toast('تم إنشاء الحساب وتسجيل دخولك');}catch(er){err.textContent=errMsg(er);b.disabled=false;}};}
+
+/* ================= العرض ================= */
+function go(name,p={}){view={name,...p};render();window.scrollTo(0,0);}
+function render(){
+  const ae=document.activeElement;const keep=ae&&ae.id&&ae.closest('#main')?{id:ae.id,s:ae.selectionStart,e:ae.selectionEnd}:null;
+  const al=alertsList();const pc=$('#navAlertCount');pc.textContent=al.length;pc.hidden=!al.length;
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.v===view.name||(['member','search'].includes(view.name)&&b.dataset.v==='home')));
+  const m=$('#main');
+  if(!ONLINE){m.innerHTML=BOOTING?'<div class="panel empty">جارٍ تحميل الأرشيف…</div>':offlineHtml();return;}
+  if(!(S.got.m&&S.got.d&&AUTH.loaded)){m.innerHTML='<div class="panel empty">جارٍ تحميل الأرشيف…</div>';return;}
+  const gate=AUTH.owner&&(!AUTH.list.length||AUTH.ownerReset)?'setup':(!AUTH.me?'login':'');
+  $('.nav').querySelectorAll('button[data-v]').forEach(b=>b.hidden=!!gate);$('#gform').hidden=!!gate;
+  $('#navUser').hidden=!!gate;$('#navUserName').textContent=AUTH.me?'مرحباً، '+AUTH.me.username:'';
+  if(gate){pc.hidden=true;if(m.dataset.screen!==gate+AUTH.owner){m.dataset.screen=gate+AUTH.owner;m.innerHTML=gate==='setup'?setupHtml():loginHtml();bindAuth();const i=m.querySelector('input');i&&i.focus();}return;}
+  m.dataset.screen='';
+  ({home:vHome,member:vMember,alerts:vAlerts,settings:vSettings,search:vSearch}[view.name]||vHome)(m);
+  if(keep){const el=document.getElementById(keep.id);if(el){el.focus();try{el.setSelectionRange(keep.s,keep.e);}catch(_){}}}
+  fillNames();}
+
+let offlineReason='';
+function offlineHtml(){return `<div class="panel empty"><div class="big">🔒</div><p>${offlineReason||'يعمل هذا الأرشيف المشترك من داخل claude.ai فقط.'}<br>افتح الرابط وأنت مسجّل الدخول بحسابك في Claude.</p></div>`;}
+
+async function fillNames(){if(!USER)return;const els=[...document.querySelectorAll('[data-uid]')];if(!els.length)return;
+  const ps=await USER.profiles(uniq(els.map(e=>e.dataset.uid)));
+  els.forEach(e=>{const p=ps[e.dataset.uid];e.textContent=p?(p.isMe?'أنت':(p.name||'أحد المشاركين')):'أحد المشاركين';});}
+function whoLine(o){if(!o.updatedAt)return '';const t=new Date(o.updatedAt).toLocaleDateString('ar-u-nu-latn',{day:'numeric',month:'long',year:'numeric'});
+  return `<div class="who">آخر تحديث ${t}${o.updatedBy?` بواسطة <span data-uid="${esc(o.updatedBy)}">…</span>`:''}</div>`;}
+
+function vHome(m){const al=alertsList();const bd=upcomingBdays(30);const exp=al.filter(o=>o.s.k==='expired').length,soon=al.length-exp;
+  let h='<div class="stack">';
+  if(!CANWRITE)h+=`<div class="banner g">أنت تشاهد الأرشيف للاطلاع فقط. لإضافة البيانات أو تعديلها اطلب من صاحب الأرشيف دعوتك بصلاحية «محرّر».</div>`;
+  if(al.length)h+=`<div class="banner r"><b>لديك ${al.length} مستند ${exp?`(منها ${exp} منتهٍ) `:''}يحتاج إلى تجديد.</b><button class="btn sm danger" data-act="nav" data-v="alerts">عرض التنبيهات</button></div>`;
+  h+=`<div class="stats"><div class="stat"><b>${S.members.length}</b><span>فرد في الأرشيف</span></div><div class="stat"><b>${S.docs.length}</b><span>مستند رسمي</span></div><div class="stat r"><b>${exp}</b><span>مستند منتهٍ</span></div><div class="stat a"><b>${soon}</b><span>قارب على الانتهاء</span></div></div>`;
+  h+=`<div class="grid2"><section class="panel"><h2>تنبيهات الصلاحية</h2>${al.length?`<div class="list">${al.slice(0,8).map(o=>{const x=byId(o.d.memberId);const T=dtype(o.d.type);return x?`<div class="item" data-act="openMember" data-id="${esc(x.id)}">${avatar(x,'sm')}<div class="grow"><b>${esc(x.name)}</b><div class="small muted">${T[2]} ${esc(o.d.title||T[1])} — ${fmtD(o.d.expiryDate)}</div></div><span class="badge b-${o.s.k}">${o.s.label}</span></div>`:''}).join('')}</div>`:nextExpHtml()}${al.length>8?`<button class="lnk" data-act="nav" data-v="alerts" style="margin-top:8px">عرض كل التنبيهات (${al.length})</button>`:''}</section>
+  <section class="panel"><h2>أعياد ميلاد خلال 30 يوماً</h2>${bd.length?`<div class="list">${bd.map(o=>`<div class="item" data-act="openMember" data-id="${esc(o.x.id)}">${avatar(o.x,'sm')}<div class="grow"><b>${esc(o.x.name)}</b><div class="small muted">${o.b.date.toLocaleDateString('ar-u-nu-latn',{day:'numeric',month:'long'})} — يتم ${o.b.turns} سنة</div></div><span class="badge b-soon">${bdayLabel(o.b)}</span></div>`).join('')}</div>`:'<p class="muted">لا توجد أعياد ميلاد قريبة.</p>'}</section></div>`;
+  h+=`<section class="panel"><div class="row between" style="margin-bottom:14px"><h2 style="margin:0">أفراد العائلة</h2><div class="row"><input class="inp" id="mq" placeholder="تصفية بالاسم أو الأسرة…" value="${esc(view.q||'')}" aria-label="تصفية">${W()?'<button class="btn" data-act="addMember">＋ إضافة فرد</button>':''}</div></div><div id="grid"></div></section></div>`;
+  m.innerHTML=h;renderGrid();$('#mq').oninput=e=>{view.q=e.target.value;renderGrid();};}
+
+function nextExpHtml(){const up=S.docs.filter(d=>d.expiryDate).map(d=>({d,s:docStatus(d)})).sort((a,b)=>a.s.n-b.s.n).slice(0,5);
+  if(!up.length)return '<p class="muted">لا توجد مستندات بتاريخ انتهاء بعد. أضف تاريخ الانتهاء لكل مستند ليظهر هنا قبل موعده.</p>';
+  return `<p class="muted small" style="margin-top:0">جميع المستندات سارية. أقرب مواعيد الانتهاء:</p><div class="list">${up.map(o=>{const x=byId(o.d.memberId);const T=dtype(o.d.type);return x?`<div class="item" data-act="openMember" data-id="${esc(x.id)}">${avatar(x,'sm')}<div class="grow"><b>${esc(x.name)}</b><div class="small muted">${T[2]} ${esc(o.d.title||T[1])} — ${fmtD(o.d.expiryDate)}</div></div><span class="badge b-ok">بعد ${daysTxt(o.s.n)}</span></div>`:''}).join('')}</div>`;}
+function renderGrid(){const q=norm(view.q);const g=$('#grid');
+  if(!S.members.length){g.innerHTML=`<div class="empty"><div class="big">👨‍👩‍👧‍👦</div><p>لم يُضف أي فرد بعد.<br>ابدأ بإضافة نفسك ثم الأبناء وأسرهم؛ لكل فرد بطاقة بصورته ومستنداته الرسمية وتنبيهات صلاحيتها.</p>${W()?'<button class="btn" data-act="addMember">＋ إضافة أول فرد</button>':''}${W()?'<p class="small">أو انقل بياناتك من البرنامج السابق عبر صفحة <button class="lnk" data-act="nav" data-v="settings">الإعدادات</button>.</p>':''}</div>`;return;}
+  const groups={};S.members.filter(x=>!q||norm([x.name,x.relation,x.family].join(' ')).includes(q)).forEach(x=>{const k=x.family||'أفراد آخرون';(groups[k]=groups[k]||[]).push(x);});
+  const keys=Object.keys(groups).sort((a,b)=>a==='أفراد آخرون'?1:b==='أفراد آخرون'?-1:a.localeCompare(b,'ar'));
+  g.innerHTML=keys.length?keys.map(k=>`<div class="gtitle">${esc(k)} <span class="muted small">(${groups[k].length})</span></div><div class="members">${groups[k].map(x=>{const n=S.docs.filter(d=>d.memberId===x.id&&['expired','soon'].includes(docStatus(d).k)).length;const nb=nextBday(x.birthDate);
+    return `<div class="mcard" data-act="openMember" data-id="${esc(x.id)}" tabindex="0">${n?`<span class="flag badge b-expired" title="مستندات تحتاج تجديداً">⚠ ${n}</span>`:''}${avatar(x)}<div class="nm">${esc(x.name)}</div><div class="small muted">${esc(x.relation||'')}</div>${nb&&nb.days<=7?`<div class="badge b-soon" style="margin-top:4px">🎂 ${bdayLabel(nb)}</div>`:''}</div>`;}).join('')}</div>`).join(''):'<p class="muted">لا توجد نتائج مطابقة.</p>';}
+
+function docCard(d,showMember){const s=docStatus(d);const T=dtype(d.type);const x=byId(d.memberId);const files=d.files||[];
+  return `<div class="doc ${s.k}"><div class="row between" style="align-items:flex-start"><div style="min-width:0"><div class="dt">${T[2]} ${esc(d.title||T[1])}</div>${showMember&&x?`<button class="lnk" data-act="openMember" data-id="${esc(x.id)}">${esc(x.name)}</button>`:''}</div><span class="badge b-${s.k}">${s.label}</span></div>
+  <div class="kv">${d.number?`<div><span>الرقم</span><b dir="ltr" style="unicode-bidi:plaintext">${esc(d.number)}</b></div>`:''}${d.issueDate?`<div><span>تاريخ الإصدار</span><b>${fmtD(d.issueDate)}</b></div>`:''}${d.expiryDate&&!W()?`<div><span>تاريخ الانتهاء</span><b>${fmtD(d.expiryDate)}</b></div>`:''}</div>
+  ${W()?`<label class="expin">تاريخ الانتهاء<input type="date" id="exp-${esc(d.id)}" data-chg="exp" data-id="${esc(d.id)}" value="${esc(d.expiryDate||'')}"></label>`:''}
+  ${d.notes?`<div class="muted small" style="margin-top:8px;white-space:pre-wrap">${esc(d.notes)}</div>`:''}
+  ${files.length?`<div class="thumbs">${files.map((f,i)=>isImg(f)?`<button class="thumb" data-act="viewDoc" data-id="${esc(d.id)}" data-i="${i}" title="${esc(f.name)}"><img src="${blobUrl(esc(f.id))}" alt="" style="width:100%;height:100%;object-fit:cover"></button>`:`<button class="thumb" data-act="viewDoc" data-id="${esc(d.id)}" data-i="${i}" title="${esc(f.name)}">📕<br>PDF</button>`).join('')}</div>`:'<div class="small muted" style="margin-top:8px">لا توجد صورة مرفقة</div>'}
+  ${whoLine(d)}
+  ${W()?`<div class="row dacts"><button class="btn ghost sm" data-act="editDoc" data-id="${esc(d.id)}">تعديل</button><button class="btn danger sm" data-act="delDoc" data-id="${esc(d.id)}">حذف</button></div>`:''}</div>`;}
+
+function vMember(m){const x=byId(view.id);if(!x){go('home');return;}
+  const md=S.docs.filter(d=>d.memberId===x.id).sort((a,b)=>docStatus(a).n-docStatus(b).n);const a=age(x.birthDate);const nb=nextBday(x.birthDate);
+  m.innerHTML=`<div class="stack"><div><button class="btn ghost sm" data-act="nav" data-v="home">→ رجوع إلى الرئيسية</button></div>
+  <section class="panel profile">${avatar(x,'lg')}<div class="pinfo"><h2 style="font-size:24px;margin:0">${esc(x.name)}</h2><div class="muted">${esc([x.relation,x.family].filter(Boolean).join(' · '))}</div>
+  <div class="facts">${x.birthDate?`<span>🎂 ${fmtD(x.birthDate)}${a!==null?` — العمر ${a} سنة`:''}</span>`:''}${nb&&nb.days<=30?`<span class="badge b-soon">عيد ميلاده ${bdayLabel(nb)}</span>`:''}${x.phone?`<span>📞 <span dir="ltr">${esc(x.phone)}</span></span>`:''}</div>
+  ${x.notes?`<div class="notes">${esc(x.notes)}</div>`:''}${whoLine(x)}</div>
+  ${W()?`<div class="pact"><button class="btn sm" data-act="editMember" data-id="${esc(x.id)}">تعديل البيانات</button><button class="btn danger sm" data-act="delMember" data-id="${esc(x.id)}">حذف الفرد</button></div>`:''}</section>
+  <section><div class="row between" style="margin-bottom:12px"><h2 style="margin:0">المستندات الرسمية (${md.length})</h2>${W()?`<button class="btn" data-act="addDoc" data-id="${esc(x.id)}">＋ إضافة مستند</button>`:''}</div>
+  ${md.length?`<div class="docs">${md.map(d=>docCard(d)).join('')}</div>`:`<div class="panel empty">لم تُضف مستندات لهذا الفرد بعد.<br><span class="small">جواز السفر، البطاقة السكانية، رخصة السياقة، ملكية المركبة… مع تنبيه قبل انتهاء الصلاحية.</span></div>`}</section></div>`;}
+
+function vAlerts(m){const all=S.docs.map(d=>({d,s:docStatus(d)}));
+  const exp=all.filter(o=>o.s.k==='expired').sort((a,b)=>a.s.n-b.s.n),soon=all.filter(o=>o.s.k==='soon').sort((a,b)=>a.s.n-b.s.n);
+  const bd=upcomingBdays(60);const tbl=all.filter(o=>o.d.expiryDate).sort((a,b)=>a.s.n-b.s.n);
+  m.innerHTML=`<div class="stack"><section class="panel"><h2 style="color:var(--red)">مستندات منتهية (${exp.length})</h2>${exp.length?`<div class="docs">${exp.map(o=>docCard(o.d,true)).join('')}</div>`:'<p class="muted">لا يوجد.</p>'}</section>
+  <section class="panel"><h2 style="color:var(--amber)">قاربت على الانتهاء (${soon.length})</h2>${soon.length?`<div class="docs">${soon.map(o=>docCard(o.d,true)).join('')}</div>`:'<p class="muted">لا يوجد.</p>'}</section>
+  <section class="panel"><h2>أعياد الميلاد خلال 60 يوماً</h2>${bd.length?`<div class="list">${bd.map(o=>`<div class="item" data-act="openMember" data-id="${esc(o.x.id)}">${avatar(o.x,'sm')}<div class="grow"><b>${esc(o.x.name)}</b><div class="small muted">${o.b.date.toLocaleDateString('ar-u-nu-latn',{weekday:'long',day:'numeric',month:'long'})} — يتم ${o.b.turns} سنة</div></div><span class="badge b-soon">${bdayLabel(o.b)}</span></div>`).join('')}</div>`:'<p class="muted">لا يوجد.</p>'}</section>
+  <section class="panel"><h2>جدول صلاحية كل المستندات</h2>${tbl.length?`<div class="tblwrap"><table><tr><th>الفرد</th><th>المستند</th><th>الرقم</th><th>تاريخ الانتهاء</th><th>الحالة</th></tr>${tbl.map(o=>{const x=byId(o.d.memberId);const T=dtype(o.d.type);return `<tr class="click" data-act="openMember" data-id="${esc(x?x.id:'')}"><td>${esc(x?x.name:'—')}</td><td>${T[2]} ${esc(o.d.title||T[1])}</td><td dir="ltr" style="text-align:right">${esc(o.d.number||'')}</td><td>${fmtD(o.d.expiryDate)}</td><td><span class="badge b-${o.s.k}">${o.s.label}</span></td></tr>`;}).join('')}</table></div>`:'<p class="muted">لا توجد مستندات بتاريخ انتهاء.</p>'}</section></div>`;}
+
+function vSearch(m){const q=norm(view.q);
+  const ms=S.members.filter(x=>norm([x.name,x.relation,x.family,x.phone,x.notes].join(' ')).includes(q));
+  const ds=S.docs.filter(d=>{const x=byId(d.memberId);const T=dtype(d.type);return norm([T[1],d.title,d.number,d.notes,x&&x.name].join(' ')).includes(q);});
+  m.innerHTML=`<div class="stack"><h2 style="margin:0">نتائج البحث عن «${esc(view.q)}»</h2>
+  <section class="panel"><h3>الأفراد (${ms.length})</h3>${ms.length?`<div class="members">${ms.map(x=>`<div class="mcard" data-act="openMember" data-id="${esc(x.id)}">${avatar(x)}<div class="nm">${esc(x.name)}</div><div class="small muted">${esc(x.relation||'')}</div></div>`).join('')}</div>`:'<p class="muted">لا يوجد.</p>'}</section>
+  <section class="panel"><h3>المستندات (${ds.length})</h3>${ds.length?`<div class="docs">${ds.map(d=>docCard(d,true)).join('')}</div>`:'<p class="muted">لا يوجد.</p>'}</section></div>`;}
+
+function vSettings(m){
+  m.innerHTML=`<div class="stack">
+  <section class="panel"><h2>التنبيهات</h2>${W()?`<div class="row" style="align-items:flex-end"><label class="f">المدة الافتراضية للتنبيه قبل انتهاء المستند (بالأيام)<input type="number" id="setRemind" min="1" value="${esc(S.settings.remindDays)}" style="width:150px"></label><button class="btn" data-act="saveSettings">حفظ</button></div>`:`<p>المدة الافتراضية: <b>${esc(S.settings.remindDays)}</b> يوماً.</p>`}<p class="muted small">يمكن تحديد مدة مختلفة لكل مستند من نافذة تعديله (مثلاً 180 يوماً لجواز السفر). المدة مشتركة لجميع أفراد العائلة.</p></section>
+  ${AUTH.owner?`<section class="panel"><div class="row between" style="margin-bottom:8px"><h2 style="margin:0">حسابات الدخول (${AUTH.list.length})</h2><button class="btn" data-act="addAcct">＋ إضافة حساب</button></div><p class="muted small" style="margin-top:0">أنشئ لكل فرد اسم مستخدم وكلمة مرور، وحدّد من يستطيع أن يرى: جميع الأفراد أو أفراداً محددين. لا يستطيع إدارة الحسابات أحد غيرك.</p>
+    ${AUTH.list.slice().sort((a,b)=>(a.createdAt||0)-(b.createdAt||0)).map(a=>`<div class="acct"><div style="flex:1;min-width:140px"><b>${esc(a.username)}</b><div class="small muted">${a.scope==='some'?'يرى '+(a.memberIds||[]).filter(i=>S.allMembers.some(x=>x.id===i)).length+' من الأفراد':'يرى جميع الأفراد'}</div></div>${AUTH.me&&AUTH.me.id===a.id?'<span class="badge b-ok">حسابك الحالي</span>':''}<button class="btn ghost sm" data-act="scopeAcct" data-id="${esc(a.id)}">من يرى؟</button><button class="btn ghost sm" data-act="resetAcct" data-id="${esc(a.id)}">تغيير كلمة المرور</button>${AUTH.me&&AUTH.me.id===a.id?'':`<button class="btn danger sm" data-act="delAcct" data-id="${esc(a.id)}">حذف</button>`}</div>`).join('')}</section>`:''}
+  <section class="panel"><h2>مشاركة الأرشيف مع العائلة</h2><p class="small">ادعُ كل فرد من زر «مشاركة» في أعلى الصفحة ببريده الإلكتروني وبصلاحية <b>«محرّر»</b>. يحتاج كل فرد إلى حساب في Claude ليفتح الأرشيف ويضيف إليه.</p><p class="muted small">لا تُفعِّل المشاركة بالرابط العام: الأرشيف يضم أرقام هويات وصور مستندات، ولن يظهر محتواه لزائر الرابط العام أصلاً.</p></section>
+  <section class="panel"><h2>نسخة احتياطية</h2><p class="muted small">البيانات محفوظة على الإنترنت ومشتركة، ومع ذلك يُنصح بتنزيل نسخة من البيانات بين حين وآخر.</p><div class="row">${DL?'<button class="btn" data-act="exportJson">تنزيل نسخة البيانات (JSON)</button><button class="btn ghost" data-act="exportCsv">تنزيل جدول المستندات (CSV)</button>':'<span class="muted small">التنزيل غير متاح في هذا العرض.</span>'}</div></section>
+  ${W()?`<section class="panel"><h2>نقل البيانات من البرنامج السابق</h2><p class="small">إذا كنت أدخلت بيانات في برنامج «أرشيف أبو ياسر» على الكمبيوتر: افتحه، ومن الإعدادات نزّل «نسخة احتياطية»، ثم اختر الملف هنا. تُنقل الأفراد وصورهم والمستندات ومرفقاتها.</p>${ASSETS?'':'<p class="small" style="color:var(--amber)">رفع الصور متاح لصاحب الأرشيف والمحرّرين فقط؛ ستُنقل البيانات بدون الصور.</p>'}<button class="btn gold" data-act="importBk">اختيار ملف النسخة الاحتياطية</button></section>`:''}
+  </div>`;}
+
+/* ================= نوافذ ================= */
+function modal(title,body,onSave,saveLabel='حفظ',wide=false){const bg=document.createElement('div');bg.className='modal-bg';
+  bg.innerHTML=`<form class="modal${wide?' wide':''}" novalidate><h2>${title}</h2>${body}<div class="row mfoot"><button class="btn" type="submit">${saveLabel}</button><button class="btn ghost" type="button" data-close>إلغاء</button></div></form>`;
+  document.body.appendChild(bg);const f=bg.querySelector('form');const close=()=>bg.remove();
+  bg.addEventListener('mousedown',e=>{if(e.target===bg)close();});bg.querySelector('[data-close]').onclick=close;
+  f.onsubmit=async e=>{e.preventDefault();const b=f.querySelector('[type=submit]');const t=b.textContent;b.disabled=true;b.textContent='جارٍ الحفظ…';
+    try{if((await onSave(f))!==false)close();}catch(err){console.error(err);toast(errMsg(err),true);}b.disabled=false;b.textContent=t;};
+  setTimeout(()=>{const i=f.querySelector('input:not([type=file]):not([type=checkbox]),select,textarea');i&&i.focus();},50);return f;}
+function ask(msg,ok='تأكيد',danger=true){return new Promise(res=>{const bg=document.createElement('div');bg.className='modal-bg';
+  bg.innerHTML=`<div class="modal" style="width:min(460px,100%)"><p style="margin-top:0;white-space:pre-wrap">${esc(msg)}</p><div class="row mfoot"><button class="btn ${danger?'danger':''}" data-y>${esc(ok)}</button><button class="btn ghost" data-n>إلغاء</button></div></div>`;
+  document.body.appendChild(bg);const done=v=>{bg.remove();res(v);};bg.querySelector('[data-y]').onclick=()=>done(true);bg.querySelector('[data-n]').onclick=()=>done(false);bg.addEventListener('mousedown',e=>{if(e.target===bg)done(false);});bg.querySelector('[data-n]').focus();});}
+function errMsg(e){const c=e&&e.code;
+  if(c==='invalid_argument')return 'لم يُسمح بالحفظ. تأكد أن لديك صلاحية «محرّر» على الأرشيف.';
+  if(c==='quota_exceeded'||c==='quota_or_state')return 'امتلأت مساحة التخزين المتاحة للأرشيف. احذف بعض المرفقات غير الضرورية ثم أعد المحاولة.';
+  if(c==='too_large')return 'الملف أكبر من الحد المسموح (20 ميجابايت). صغّر حجمه ثم أعد المحاولة.';
+  if(c==='unsupported_type')return 'نوع الملف غير مدعوم. المسموح: صور JPG أو PNG أو WEBP، أو ملفات PDF.';
+  if(c==='rate_limited'||c==='resource_exhausted')return 'محاولات كثيرة متتالية. انتظر قليلاً ثم أعد المحاولة.';
+  return 'تعذّر إتمام العملية'+(e&&e.message?': '+e.message:'');}
+
+async function shrink(file,max){try{const bmp=await createImageBitmap(file);const s=Math.min(1,max/Math.max(bmp.width,bmp.height));const c=document.createElement('canvas');c.width=Math.round(bmp.width*s);c.height=Math.round(bmp.height*s);c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);const b=await new Promise(r=>c.toBlob(r,'image/jpeg',.86));return b||file;}catch(_){return null;}}
+async function uploadFile(file,maxPx){if(!ASSETS)throw{code:'not_granted',message:'رفع الملفات غير متاح لك في هذا العرض'};
+  let blob=file,type=file.type,name=file.name||'ملف';
+  if(/^image\//.test(type)||/\.(jpe?g|png|webp|gif|bmp|heic|heif)$/i.test(name)){const s=await shrink(file,maxPx);if(!s)throw{code:'unsupported_type'};blob=s;type='image/jpeg';name=name.replace(/\.[^.]+$/,'')+'.jpg';}
+  else if(type!=='application/pdf'&&!/\.pdf$/i.test(name))throw{code:'unsupported_type'};
+  else type='application/pdf';
+  const r=await ASSETS.upload(blob,{type});return{id:r.id,name,type};}
+async function dropAsset(id){if(!ASSETS||!id)return;try{await ASSETS.delete(id);}catch(_){}}
+const stamp=o=>({...o,updatedAt:Date.now(),updatedBy:MYID||null});
+
+function memberForm(x){const rels=uniq(['أنا','الزوجة','ابن','ابنة','زوجة ابن','زوج ابنة','حفيد','حفيدة','أخ','أخت',...S.members.map(m=>m.relation)]);const fams=uniq(S.members.map(m=>m.family));
+  return `<div class="form"><div class="full row"><div id="phPrev">${x.photo?`<img class="av" style="margin:0" src="${blobUrl(esc(x.photo))}" alt="">`:'<div class="av" style="margin:0">👤</div>'}</div>${ASSETS?`<label class="f" style="flex:1;min-width:180px">الصورة الشخصية (تظهر على بطاقته)<input type="file" id="f-photo" name="photo" accept="image/*"></label>${x.photo?'<label class="small"><input type="checkbox" name="rmPhoto"> إزالة الصورة</label>':''}`:'<span class="small muted">إضافة الصور متاحة لصاحب الأرشيف والمحرّرين.</span>'}</div>
+  <label class="f full">الاسم الكامل *<input id="f-name" name="name" required value="${esc(x.name)}"></label>
+  <label class="f">صلة القرابة<input id="f-rel" name="relation" list="relL" value="${esc(x.relation)}" placeholder="ابن، زوجة ابن، حفيد…"></label>
+  <label class="f">الأسرة / الفرع (لتجميع البطاقات)<input id="f-fam" name="family" list="famL" value="${esc(x.family)}" placeholder="مثال: أسرة ياسر"></label>
+  <label class="f">تاريخ الميلاد<input id="f-bd" type="date" name="birthDate" value="${esc(x.birthDate)}"></label>
+  <label class="f">رقم الهاتف<input id="f-ph" name="phone" dir="ltr" value="${esc(x.phone)}"></label>
+  <label class="f full">ملاحظات شخصية<textarea id="f-notes" name="notes" placeholder="ملاحظات تودّ الرجوع إليها عن هذا الفرد…">${esc(x.notes)}</textarea></label>
+  ${slotsHtml(x)}
+  <datalist id="relL">${rels.map(r=>`<option value="${esc(r)}">`).join('')}</datalist><datalist id="famL">${fams.map(r=>`<option value="${esc(r)}">`).join('')}</datalist></div>`;}
+
+const SLOTS=[['cpr','البطاقة الذكية (السكانية)','🪪',[['front','الوجه الأمامي'],['back','الوجه الخلفي']]],['passport','جواز السفر','🛂',[['main','صفحة البيانات']]],['license','رخصة السياقة (الليسن)','🚗',[['front','الوجه الأمامي'],['back','الوجه الخلفي']]]];
+const FILE_ACC='image/*,application/pdf';
+function slotsHtml(x){const mine=x.id?S.docs.filter(d=>d.memberId===x.id):[];const up=!!ASSETS;
+  let h=`<div class="slots-h">المستندات الأساسية <span class="small muted" style="font-weight:400">— املأ ما يتوفر لديك، ويمكن إكمال الباقي لاحقاً</span></div>`;
+  for(const [k,label,ic,sides] of SLOTS){const ex=mine.find(d=>d.type===k);const names=(ex&&ex.files||[]).map(f=>f.name);
+    h+=`<fieldset class="slot"><legend>${ic} ${label}</legend><div class="slotgrid">
+    ${up?sides.map(([sd,sl])=>{const has=names.some(n=>n.startsWith(label+' - '+sl));return `<label class="f">${sl}${has?' (مرفوعة — اختر ملفاً لاستبدالها)':''}<input type="file" id="s-${k}-${sd}" name="s-${k}-${sd}" accept="${FILE_ACC}"></label>`;}).join(''):''}
+    <label class="f">رقم المستند<input id="s-${k}-num" name="s-${k}-num" dir="ltr" value="${esc(ex?ex.number:'')}"></label>
+    <label class="f">تاريخ الانتهاء<input type="date" id="s-${k}-exp" name="s-${k}-exp" value="${esc(ex?ex.expiryDate:'')}"></label>
+    </div>${ex&&(ex.files||[]).length?`<div class="have">✓ مرفق حالياً: ${ex.files.length} ملف</div>`:''}</fieldset>`;}
+  h+=`<fieldset class="slot"><legend>📁 مستند آخر</legend><div class="slotgrid">
+    <label class="f">اسم المستند<input id="s-other-title" name="s-other-title" placeholder="مثال: شهادة الميلاد، وثيقة تأمين…"></label>
+    ${up?`<label class="f">الملف (صورة أو PDF)<input type="file" id="s-other-files" name="s-other-files" multiple accept="${FILE_ACC}"></label>`:''}
+    <label class="f">رقم المستند<input id="s-other-num" name="s-other-num" dir="ltr"></label>
+    <label class="f">تاريخ الانتهاء (إن وُجد)<input type="date" id="s-other-exp" name="s-other-exp"></label>
+    </div><div class="small muted" style="margin-top:6px">لإضافة أكثر من مستند آخر استخدم زر «إضافة مستند» في صفحة الفرد.</div></fieldset>`;
+  if(!up)h+=`<div class="full small muted">إرفاق الصور متاح لصاحب الأرشيف والمحرّرين.</div>`;
+  return h;}
+const extOf=n=>{const i=String(n).lastIndexOf('.');return i>0?String(n).slice(i):'';};
+async function saveSlots(fd,memberId){
+  for(const [k,label,,sides] of SLOTS){const ex=S.docs.find(d=>d.memberId===memberId&&d.type===k);
+    const num=(fd.get(`s-${k}-num`)||'').trim(),exp=fd.get(`s-${k}-exp`)||'';
+    const add=[];for(const [sd,sl] of sides){const fl=fd.get(`s-${k}-${sd}`);if(fl&&fl.size){const r=await uploadFile(fl,1800);r.name=`${label} - ${sl}${extOf(r.name)}`;add.push(r);}}
+    if(!ex&&!add.length&&!num&&!exp)continue;
+    if(ex&&!add.length&&num===(ex.number||'')&&exp===(ex.expiryDate||''))continue;
+    const prefixes=add.map(a=>a.name.replace(/\.[^.]+$/,''));
+    const old=(ex&&ex.files)||[];const replaced=old.filter(f=>prefixes.some(p=>f.name.startsWith(p)));
+    const o=stamp({memberId,type:k,title:ex&&ex.title||'',number:num,issueDate:ex&&ex.issueDate||'',expiryDate:exp,remindDays:ex&&ex.remindDays||+S.settings.remindDays||60,notes:ex&&ex.notes||'',files:[...old.filter(f=>!replaced.includes(f)),...add],createdAt:ex&&ex.createdAt||Date.now(),createdBy:ex&&ex.createdBy||MYID||null});
+    await DB.collection('docs').doc(ex?ex.id:uid()).set(o);replaced.forEach(f=>dropAsset(f.id));}
+  const t=(fd.get('s-other-title')||'').trim(),num=(fd.get('s-other-num')||'').trim(),exp=fd.get('s-other-exp')||'';
+  const files=[];for(const fl of fd.getAll('s-other-files')){if(fl&&fl.size)files.push(await uploadFile(fl,1800));}
+  if(t||files.length||exp||num){await DB.collection('docs').doc(uid()).set(stamp({memberId,type:'other',title:t||'مستند آخر',number:num,issueDate:'',expiryDate:exp,remindDays:+S.settings.remindDays||60,notes:'',files,createdAt:Date.now(),createdBy:MYID||null}));}}
+function openMemberForm(x={}){const f=modal(x.id?'تعديل بيانات '+esc(x.name):'إضافة فرد جديد',memberForm(x),async f=>{const fd=new FormData(f);const name=(fd.get('name')||'').trim();if(!name){toast('اكتب الاسم أولاً',true);return false;}
+    const id=x.id||uid();const o=stamp({name,relation:(fd.get('relation')||'').trim(),family:(fd.get('family')||'').trim(),birthDate:fd.get('birthDate')||'',phone:(fd.get('phone')||'').trim(),notes:(fd.get('notes')||'').trim(),photo:x.photo||null,createdAt:x.createdAt||Date.now(),createdBy:x.createdBy||MYID||null,createdByAcct:x.createdByAcct||(AUTH.me&&AUTH.me.id)||null});
+    const ph=fd.get('photo');let old=null;
+    if(ph&&ph.size){const r=await uploadFile(ph,500);old=x.photo;o.photo=r.id;}else if(fd.get('rmPhoto')){old=x.photo;o.photo=null;}
+    await DB.collection('members').doc(id).set(o);if(old)dropAsset(old);await saveSlots(fd,id);toast('تم الحفظ');if(!x.id)go('member',{id});},'حفظ',true);
+  const pi=f.querySelector('[name=photo]');if(pi)pi.onchange=e=>{const fl=e.target.files[0];if(fl)$('#phPrev').innerHTML=`<img class="av" style="margin:0" src="${URL.createObjectURL(fl)}" alt="">`;};}
+
+function docForm(d){const files=d.files||[];return `<div class="form">
+  <label class="f">نوع المستند<select id="d-type" name="type">${DOC_TYPES.map(t=>`<option value="${t[0]}" ${t[0]===(d.type||'passport')?'selected':''}>${t[2]} ${t[1]}</option>`).join('')}</select></label>
+  <label class="f">اسم مخصّص (اختياري)<input id="d-title" name="title" value="${esc(d.title)}" placeholder="مثال: جواز السفر الجديد"></label>
+  <label class="f">رقم المستند<input id="d-num" name="number" dir="ltr" value="${esc(d.number)}"></label>
+  <label class="f">التنبيه قبل الانتهاء بـ (يوم)<input id="d-rem" type="number" name="remindDays" min="1" value="${esc(d.remindDays||S.settings.remindDays)}"></label>
+  <label class="f">تاريخ الإصدار<input id="d-iss" type="date" name="issueDate" value="${esc(d.issueDate)}"></label>
+  <label class="f">تاريخ الانتهاء<input id="d-exp" type="date" name="expiryDate" value="${esc(d.expiryDate)}"></label>
+  ${ASSETS?`<label class="f full">صور / نسخ المستند (صورة أو PDF — يمكن اختيار أكثر من ملف كالوجه والظهر)<input id="d-files" type="file" name="files" multiple accept="image/*,application/pdf"></label>`:'<div class="full small muted">إرفاق الصور متاح لصاحب الأرشيف والمحرّرين.</div>'}
+  ${files.length?`<div class="full"><div class="small muted">المرفقات الحالية — علّم ما تريد إزالته:</div>${files.map((f,i)=>`<label class="small" style="display:block"><input type="checkbox" name="rm" value="${i}"> ${esc(f.name)}</label>`).join('')}</div>`:''}
+  <label class="f full">ملاحظات<textarea id="d-notes" name="notes" placeholder="مثال: الأصل محفوظ في الخزنة، موعد التجديد…">${esc(d.notes)}</textarea></label></div>`;}
+
+function openDocForm(d){const x=byId(d.memberId);modal((d.id?'تعديل مستند':'إضافة مستند')+' — '+esc(x?x.name:''),docForm(d),async f=>{const fd=new FormData(f);const rm=new Set(fd.getAll('rm').map(Number));
+    const all=d.files||[];const kept=all.filter((_,i)=>!rm.has(i)),removed=all.filter((_,i)=>rm.has(i));
+    const add=[];for(const fl of fd.getAll('files')){if(fl&&fl.size)add.push(await uploadFile(fl,1800));}
+    const id=d.id||uid();
+    const o=stamp({memberId:d.memberId,type:fd.get('type'),title:(fd.get('title')||'').trim(),number:(fd.get('number')||'').trim(),remindDays:+fd.get('remindDays')||+S.settings.remindDays||60,issueDate:fd.get('issueDate')||'',expiryDate:fd.get('expiryDate')||'',notes:(fd.get('notes')||'').trim(),files:[...kept,...add],createdAt:d.createdAt||Date.now(),createdBy:d.createdBy||MYID||null});
+    await DB.collection('docs').doc(id).set(o);removed.forEach(r=>dropAsset(r.id));toast('تم حفظ المستند');});}
+
+/* ================= عارض المرفقات ================= */
+let lb={items:[],i:0,el:null};
+function openViewer(items,i){lb.items=items;lb.i=i;if(!lb.el){lb.el=document.createElement('div');lb.el.className='lb';document.body.appendChild(lb.el);lb.el.addEventListener('mousedown',e=>{if(e.target.classList.contains('stage'))closeViewer();});}showLb();}
+function closeViewer(){lb.el&&lb.el.remove();lb.el=null;}
+function showLb(){const f=lb.items[lb.i];const n=lb.items.length;const u=blobUrl(esc(f.id));
+  const inner=isImg(f)?`<img src="${u}" alt="">`:`<iframe src="${u}" title="${esc(f.name)}"></iframe>`;
+  lb.el.innerHTML=`<div class="stage">${inner}</div><div class="tb">${DL?'<button class="btn sm gold" data-lb="d">تنزيل نسخة</button>':''}<a class="btn sm ghost" href="${u}" target="_blank" rel="noopener">فتح في نافذة جديدة</a><button class="btn sm ghost" data-lb="x">✕ إغلاق</button></div>
+  ${n>1?'<button class="nb prev" data-lb="p" aria-label="السابق">›</button><button class="nb next" data-lb="n" aria-label="التالي">‹</button>':''}<div class="cap">${esc(f.name)}${n>1?` — ${lb.i+1} من ${n}`:''}</div>`;
+  lb.el.querySelectorAll('[data-lb]').forEach(b=>b.onclick=async()=>{const a=b.dataset.lb;
+    if(a==='x')return closeViewer();
+    if(a==='d'){try{const r=await fetch(blobUrl(f.id));if(!r.ok)throw new Error(r.status);await DL.save({filename:f.name,data:await r.blob()});}catch(e){if(e&&e.code!=='declined')toast('تعذّر تنزيل الملف',true);}return;}
+    lb.i=(lb.i+(a==='n'?1:-1)+n)%n;showLb();});}
+document.addEventListener('keydown',e=>{if(!lb.el)return;const n=lb.items.length;if(e.key==='Escape')closeViewer();else if(n>1&&e.key==='ArrowLeft'){lb.i=(lb.i+1)%n;showLb();}else if(n>1&&e.key==='ArrowRight'){lb.i=(lb.i-1+n)%n;showLb();}});
+
+/* ================= الأوامر ================= */
+function scopeHtml(a){const some=!!a&&a.scope==='some';const sel=new Set((a&&a.memberIds)||[]);const groups={};
+  S.allMembers.forEach(x=>{const k=x.family||'أفراد آخرون';(groups[k]=groups[k]||[]).push(x);});
+  const keys=Object.keys(groups).sort((x,y)=>x==='أفراد آخرون'?1:y==='أفراد آخرون'?-1:x.localeCompare(y,'ar'));
+  return `<div class="full"><div class="small" style="font-weight:800;margin-bottom:4px">من يستطيع هذا المستخدم أن يرى؟</div>
+  <label class="small" style="display:block"><input type="radio" name="scope" value="all" ${some?'':'checked'}> جميع أفراد العائلة ومستنداتهم</label>
+  <label class="small" style="display:block"><input type="radio" name="scope" value="some" ${some?'checked':''}> أفراد محددون فقط (اختر من القائمة):</label>
+  <div class="pick">${S.allMembers.length?keys.map(k=>`<div class="gt">${esc(k)}</div><div>${groups[k].map(x=>`<label><input type="checkbox" name="mids" value="${esc(x.id)}" ${sel.has(x.id)?'checked':''}> ${esc(x.name)}</label>`).join('')}</div>`).join(''):'<span class="small muted">لم يُضف أي فرد بعد.</span>'}</div>
+  <div class="small muted" style="margin-top:6px">يرى المستخدم أيضاً أي فرد يضيفه هو بنفسه.</div></div>`;}
+function readScope(fd){const scope=fd.get('scope')==='some'?'some':'all';return{scope,memberIds:scope==='some'?fd.getAll('mids'):[]};}
+function acctForm(title,a,o,onDone){const pw=o.pw!==false,sc=o.scope!==false,lockU=!!a;
+  modal(title,`<div class="form"><label class="f full">اسم المستخدم<input id="ac-u" name="u" value="${esc(a?a.username:'')}" ${lockU?'readonly':''} autocomplete="off"></label>
+  ${pw?`<label class="f">كلمة المرور (4 أحرف على الأقل)<input id="ac-p" name="p" type="password" autocomplete="new-password"></label><label class="f">تأكيد كلمة المرور<input id="ac-p2" name="p2" type="password" autocomplete="new-password"></label>`:''}
+  ${sc?scopeHtml(a):''}</div>`,async f=>{const fd=new FormData(f);const uu=(fd.get('u')||'').trim(),p=fd.get('p')||'';
+    if(!uu){toast('اكتب اسم المستخدم',true);return false;}
+    const scope=sc?readScope(fd):{scope:(a&&a.scope)||'all',memberIds:(a&&a.memberIds)||[]};
+    if(sc&&scope.scope==='some'&&!scope.memberIds.length){toast('اختر فرداً واحداً على الأقل، أو اختر «جميع أفراد العائلة»',true);return false;}
+    if(!pw){await DB.collection('logins').doc(a.id).update({scope:scope.scope,memberIds:scope.memberIds});onDone&&onDone();return;}
+    if(p.length<4){toast('كلمة المرور قصيرة؛ اكتب 4 أحرف على الأقل',true);return false;}if(p!==fd.get('p2')){toast('كلمتا المرور غير متطابقتين',true);return false;}
+    if(!lockU&&AUTH.list.some(x=>unorm(x.username)===unorm(uu))){toast('اسم المستخدم مستخدم من قبل؛ اختر اسماً آخر',true);return false;}
+    const n=await createAcct(uu,p,scope);onDone&&onDone(n);},'حفظ',sc);}
+const ACT={
+  logout:()=>{sess(null);AUTH.me=null;applyScope();view={name:'home',q:''};render();},
+  ownerSetup:()=>{AUTH.ownerReset=true;render();},
+  cancelSetup:()=>{AUTH.ownerReset=false;render();},
+  addAcct:()=>acctForm('إضافة حساب دخول',null,{},a=>toast(`تم إنشاء حساب «${a.username}». أرسل له اسم المستخدم وكلمة المرور.`)),
+  scopeAcct:d=>{const a=AUTH.list.find(x=>x.id===d.id);acctForm('من يرى «'+esc(a.username)+'»؟',a,{pw:false},()=>toast('تم حفظ الصلاحيات'));},
+  resetAcct:d=>{const a=AUTH.list.find(x=>x.id===d.id);acctForm('تغيير كلمة مرور «'+esc(a.username)+'»',a,{scope:false},n=>{if(AUTH.me&&AUTH.me.id===n.id)signIn(n);toast('تم تغيير كلمة المرور');});},
+  delAcct:async d=>{const a=AUTH.list.find(x=>x.id===d.id);if(!(await ask(`حذف حساب الدخول «${a.username}»؟ لن يستطيع صاحبه الدخول بعد ذلك. (لا تُحذف أي بيانات من الأرشيف)`,'حذف الحساب')))return;await DB.collection('logins').doc(a.id).delete();toast('تم حذف الحساب');},
+  nav:d=>go(d.v),
+  openMember:d=>d.id&&go('member',{id:d.id}),
+  addMember:()=>openMemberForm({}),
+  editMember:d=>openMemberForm(byId(d.id)),
+  delMember:async d=>{const x=byId(d.id);const mine=S.docs.filter(o=>o.memberId===x.id);
+    if(!(await ask(`هل تريد حذف «${x.name}» من الأرشيف؟\nسيُحذف معه ${mine.length} مستند ومرفقاته لجميع المشاركين، ولا يمكن التراجع عن ذلك.`,'حذف نهائي')))return;
+    for(const o of mine){await DB.collection('docs').doc(o.id).delete();(o.files||[]).forEach(f=>dropAsset(f.id));}
+    await DB.collection('members').doc(x.id).delete();dropAsset(x.photo);toast('تم الحذف');go('home');},
+  addDoc:d=>openDocForm({memberId:d.id}),
+  editDoc:d=>openDocForm(S.docs.find(o=>o.id===d.id)),
+  delDoc:async d=>{const o=S.docs.find(x=>x.id===d.id);if(!(await ask(`حذف مستند «${o.title||dtype(o.type)[1]}» ومرفقاته لجميع المشاركين؟`,'حذف')))return;
+    await DB.collection('docs').doc(o.id).delete();(o.files||[]).forEach(f=>dropAsset(f.id));toast('تم الحذف');},
+  viewDoc:d=>{const o=S.docs.find(x=>x.id===d.id);openViewer(o.files,+d.i);},
+  saveSettings:async()=>{const v=Math.max(1,+$('#setRemind').value||60);await DB.collection('settings').doc('main').set(stamp({remindDays:v}));toast('تم الحفظ');},
+  exportJson:async()=>{const data=JSON.stringify({app:'abu-yaser-archive-online',date:new Date().toISOString(),settings:S.settings,members:S.members,docs:S.docs},null,1);
+    try{await DL.save({filename:`أرشيف أبو ياسر - بيانات - ${new Date().toISOString().slice(0,10)}.json`,data});toast('تم تنزيل النسخة');}catch(e){if(e&&e.code!=='declined')toast('تعذّر التنزيل',true);}},
+  exportCsv:async()=>{const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const rows=[['الفرد','صلة القرابة','المستند','الرقم','تاريخ الإصدار','تاريخ الانتهاء','الحالة','ملاحظات']];
+    S.docs.slice().sort((a,b)=>docStatus(a).n-docStatus(b).n).forEach(d=>{const x=byId(d.memberId)||{};rows.push([x.name,x.relation,d.title||dtype(d.type)[1],d.number,d.issueDate,d.expiryDate,docStatus(d).label,d.notes]);});
+    try{await DL.save({filename:`أرشيف أبو ياسر - جدول المستندات - ${new Date().toISOString().slice(0,10)}.csv`,data:'﻿'+rows.map(r=>r.map(q).join(',')).join('\r\n')});toast('تم التنزيل');}catch(e){if(e&&e.code!=='declined')toast('تعذّر التنزيل',true);}},
+  importBk:()=>$('#importInp').click()
+};
+document.addEventListener('click',async e=>{const t=e.target.closest('[data-act]');if(!t||t.closest('.modal'))return;e.preventDefault();const fn=ACT[t.dataset.act];if(!fn)return;
+  try{await fn(t.dataset);}catch(err){console.error(err);toast(errMsg(err),true);}});
+document.addEventListener('change',async e=>{const t=e.target.closest&&e.target.closest('[data-chg="exp"]');if(!t||!W())return;
+  const d=S.docs.find(o=>o.id===t.dataset.id);if(!d||(d.expiryDate||'')===t.value)return;
+  try{await DB.collection('docs').doc(d.id).update({expiryDate:t.value,updatedAt:Date.now(),updatedBy:MYID||null});toast(t.value?'تم تحديث تاريخ الانتهاء إلى '+fmtD(t.value):'أُزيل تاريخ الانتهاء');}catch(err){toast(errMsg(err),true);}});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'){const t=e.target.closest&&e.target.closest('.mcard[data-act]');if(t)go('member',{id:t.dataset.id});}});
+$('#gform').addEventListener('submit',e=>{e.preventDefault();const q=$('#gq').value.trim();if(q)go('search',{q});});
+
+/* استيراد نسخة البرنامج السابق */
+function d2b(u){const i=u.indexOf(',');const mime=(u.slice(0,i).match(/data:([^;]+)/)||[])[1]||'application/octet-stream';const bin=atob(u.slice(i+1));const a=new Uint8Array(bin.length);for(let k=0;k<bin.length;k++)a[k]=bin.charCodeAt(k);return new Blob([a],{type:mime});}
+const okId=s=>/^[A-Za-z0-9_\-.~:@+]{1,120}$/.test(String(s||''))&&s!=='.'&&s!=='..';
+$('#importInp').addEventListener('change',async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
+  let j;try{j=JSON.parse(await f.text());if(j.app!=='abu-yaser-archive'||!Array.isArray(j.members))throw 0;}catch(_){toast('هذا الملف ليس نسخة احتياطية من برنامج «أرشيف أبو ياسر» على الكمبيوتر.',true);return;}
+  if(!(await ask(`النسخة بتاريخ ${new Date(j.date).toLocaleString('ar-u-nu-latn')}\nتحتوي ${j.members.length} فرد و${(j.docs||[]).length} مستند.\n\nستُضاف إلى الأرشيف المشترك وتظهر لجميع المشاركين. السجلات الموجودة بنفس المعرّف ستُستبدل.`,'نقل البيانات',false)))return;
+  let n=0,fails=0;const total=j.members.length+(j.docs||[]).length;const prog=document.createElement('div');prog.className='toast';document.body.appendChild(prog);
+  const tick=()=>prog.textContent=`جارٍ النقل… ${n} من ${total}`;tick();
+  const idMap={};
+  try{
+    for(const x of j.members){const id=okId(x.id)?x.id:uid();idMap[x.id]=id;let photo=null;
+      if(x.photo&&ASSETS){try{photo=(await uploadFile(new File([d2b(x.photo)],'photo.jpg',{type:'image/jpeg'}),500)).id;}catch(_){fails++;}}
+      await DB.collection('members').doc(id).set(stamp({name:x.name||'بدون اسم',relation:x.relation||'',family:x.family||'',birthDate:x.birthDate||'',phone:x.phone||'',notes:x.notes||'',photo,createdAt:x.created||Date.now(),createdBy:MYID||null}));n++;tick();}
+    for(const d of (j.docs||[])){const files=[];
+      for(const fl of (d.files||[])){if(!ASSETS)break;try{const b=d2b(fl.data);files.push(await uploadFile(new File([b],fl.name||'ملف',{type:fl.type||b.type}),1800));}catch(_){fails++;}}
+      const id=okId(d.id)?d.id:uid();
+      await DB.collection('docs').doc(id).set(stamp({memberId:idMap[d.memberId]||d.memberId,type:d.type||'other',title:d.title||'',number:d.number||'',remindDays:+d.remindDays||60,issueDate:d.issueDate||'',expiryDate:d.expiryDate||'',notes:d.notes||'',files,createdAt:d.updated||Date.now(),createdBy:MYID||null}));n++;tick();}
+    prog.remove();toast(`تم نقل ${n} سجل${fails?` — تعذّر رفع ${fails} مرفق`:''}`,!!fails);go('home');
+  }catch(err){prog.remove();toast(errMsg(err),true);}});
+
+/* ================= التشغيل ================= */
+render();
+(async()=>{
+  BOOTING=false;
+  if(!window.claude||typeof window.claude.use!=='function'){render();return;}
+  BOOTING=true;[DB,USER]=await Promise.all([claude.use('db'),claude.use('user')]);BOOTING=false;
+  if(!DB){offlineReason='لا يمكن فتح الأرشيف المشترك الآن، إما لأنك غير مسجّل الدخول أو لأن صاحب الأرشيف لم يشاركه معك.';render();return;}
+  ONLINE=true;
+  MYID=USER?await USER.id():null;AUTH.owner=USER?await USER.isOwner():false;
+  DB.collection('logins').onSnapshot(s=>{AUTH.list=s.docs.map(d=>({id:d.id,...d.data()}));AUTH.loaded=true;resolveMe();applyScope();if(!AUTH.list.length)sess(null);document.getElementById('main').dataset.screen='';render();},e=>{console.error(e);AUTH.loaded=true;render();});
+  const cw=USER?await USER.can('data.write'):null;if(cw===false)CANWRITE=false;
+  render();
+  const onErr=e=>{console.error(e);if(e&&e.code==='revoked'){ONLINE=false;offlineReason='توقف الوصول إلى الأرشيف.';}else if(e&&e.code==='unavailable'){setTimeout(()=>location.reload(),3000);}render();};
+  DB.collection('members').onSnapshot(s=>{S.allMembers=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));applyScope();S.got.m=true;render();},onErr);
+  DB.collection('docs').onSnapshot(s=>{S.allDocs=s.docs.map(d=>({id:d.id,...d.data()}));applyScope();S.got.d=true;render();},onErr);
+  DB.doc('settings/main').onSnapshot(s=>{S.settings=Object.assign({remindDays:60},s.exists?s.data():{});render();},onErr);
+  Promise.all([claude.use('assets'),claude.use('downloads')]).then(([a,d])=>{ASSETS=a;DL=d;render();});
+})();
+</script>
