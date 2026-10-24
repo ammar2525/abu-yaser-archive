@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function ownerPath() { return /databases/$(database)/documents/config/owner; }
+    function isOwner() { return signedIn() && exists(ownerPath()) && get(ownerPath()).data.uid == request.auth.uid; }
+    function isMember() { return signedIn() && exists(/databases/$(database)/documents/logins/$(request.auth.uid)); }
+
+    // صاحب الأرشيف: أول من يفعّل الأرشيف، ولا يتغيّر إلا من لوحة Firebase
+    match /config/owner {
+      allow read: if true;
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+    }
+    // ربط اسم المستخدم (مشفّراً) بحساب الدخول؛ يُقرأ قبل تسجيل الدخول
+    match /handles/{h} {
+      allow read: if true;
+      allow write: if isOwner();
+    }
+    // حسابات الدخول: لا يديرها إلا صاحب الأرشيف، وكل مستخدم يقرأ حسابه فقط
+    match /logins/{uid} {
+      allow read: if isOwner() || (signedIn() && request.auth.uid == uid);
+      allow write: if isOwner();
+    }
+    // بيانات الأرشيف: لأصحاب الحسابات المفعّلة فقط
+    match /members/{id} { allow read, write: if isMember(); }
+    match /docs/{id} { allow read, write: if isMember(); }
+    match /settings/{id} { allow read, write: if isMember(); }
+  }
+}

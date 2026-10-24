@@ -1,37 +1,48 @@
-# أرشيف أبو ياسر — النسخة المشتركة (claude.ai Artifact)
+# أرشيف أبو ياسر
 
-صفحة HTML واحدة: `abu-yaser-online.html`
-منشورة كـ Artifact على: https://claude.ai/artifact/VR9XPCZuezjuird6Sdxz5h
+أرشيف عائلي لأفراد العائلة ومستنداتهم الرسمية (جواز السفر، البطاقة السكانية، رخصة السياقة…)، مع تنبيهات قبل انتهاء الصلاحية وأعياد الميلاد.
 
-## مهم قبل التعديل
-- الصفحة تعمل **داخل claude.ai فقط**، لأنها تعتمد على `window.claude.use(...)` (قاعدة البيانات، رفع الملفات، المستخدم، التنزيل).
-  إذا فُتحت مباشرة في المتصفح تظهر رسالة «يعمل من داخل claude.ai فقط».
-- الملف لا يحتوي على `<html>/<head>/<body>`؛ منصة Artifact تضيفها عند النشر.
-- لإعادة النشر على نفس الرابط من Claude Code: استخدم أداة Artifact مع `url` أعلاه (اقرأ الـ artifact أولاً)، وأعطِ الملف المحدّث.
+- **الموقع:** https://ammar2525.github.io/abu-yaser-archive/
+- **الاستضافة:** GitHub Pages (من فرع `main`).
+- **البيانات والصور وتسجيل الدخول:** Firebase (Firestore و Storage و Authentication).
 
-## القدرات المعلنة (capabilities) — يجب الإبقاء عليها عند النشر
-```json
-{
-  "db": { "rules": [
-    { "path": "", "read": "interact", "write": "interact" },
-    { "path": "logins", "read": "interact", "write": "owner" }
-  ]},
-  "user": { "scopes": ["profile"] },
-  "assets": {},
-  "downloads": true
-}
-```
-- لا يقرأ البيانات إلا صاحب الأرشيف ومن دُعي بالبريد بصلاحية Editor (زوار الرابط العام لا يرون شيئاً).
-- حسابات الدخول (`logins`) لا يعدّلها إلا صاحب الأرشيف.
+> الكود في هذا الريبو عام، لكنه لا يحتوي على أي بيانات. بيانات العائلة كلها في Firebase، ولا يقرؤها إلا من لديه حساب أنشأه صاحب الأرشيف.
 
-## نموذج البيانات (db)
-- `members/<id>`: name, relation, family, birthDate (YYYY-MM-DD), phone, notes, photo (asset id), createdAt, createdBy, createdByAcct, updatedAt, updatedBy
-- `docs/<id>`: memberId, type (passport|cpr|license|vehicle|birth|edu|insurance|property|other), title, number, issueDate, expiryDate, remindDays, notes, files:[{id (asset id), name, type}], createdAt, createdBy, updatedAt, updatedBy
-- `settings/main`: remindDays (المدة الافتراضية للتنبيه)
-- `logins/<'u'+sha256('abu-yaser:'+username)[0:32]>`: username, salt, hash (PBKDF2-SHA256, 150000 تكرار), scope ('all'|'some'), memberIds[], createdAt, createdBy
-- الملفات والصور في Assets، وتُعرض من `/_blob/<asset id>`.
+## الملفات
 
-## ملاحظات
-- شاشة اليوزر/الباسوورد طبقة عرض إضافية؛ الحماية الفعلية هي دعوة البريد بصلاحية Editor.
-- تحديد «من يرى؟» لكل حساب تصفية في الواجهة وليس حماية تقنية.
-- الخط: Tajawal من Google Fonts، والاتجاه RTL.
+| الملف | الوصف |
+|---|---|
+| `index.html` | الموقع كاملاً (صفحة واحدة). |
+| `firebase-config.js` | إعدادات مشروع Firebase (ليست سرية). |
+| `firestore.rules` | قواعد حماية قاعدة البيانات. |
+| `storage.rules` | قواعد حماية الصور والمرفقات. |
+| `abu-yaser-online.html` | النسخة القديمة التي تعمل داخل claude.ai فقط (للأرشفة). |
+
+## الإعداد لأول مرة (مرة واحدة فقط)
+
+1. **إنشاء المشروع:** افتح https://console.firebase.google.com ← **Add project** ← اختر اسماً (مثلاً `abu-yaser`). لا تحتاج Google Analytics.
+2. **تطبيق الويب:** من صفحة المشروع اضغط أيقونة الويب `</>` ← اكتب اسماً ← **Register app**. انسخ القيم من `firebaseConfig` إلى الملف `firebase-config.js`.
+3. **تسجيل الدخول:** **Build ← Authentication ← Get started ← Email/Password ← Enable ← Save**.
+   ثم **Settings ← Authorized domains ← Add domain** وأضف: `ammar2525.github.io`
+4. **قاعدة البيانات:** **Build ← Firestore Database ← Create database** ← اختر موقعاً قريباً (مثلاً `europe-west` أو `me-central`) ← **Production mode**.
+   ثم تبويب **Rules**: احذف الموجود والصق محتوى `firestore.rules` ← **Publish**.
+5. **الصور والمرفقات:** **Build ← Storage ← Get started**. يطلب Firebase ترقية المشروع إلى خطة **Blaze** وربط بطاقة. الاستخدام العائلي يبقى ضمن الحد المجاني في الغالب، ويمكنك ضبط تنبيه ميزانية (مثلاً دولار واحد) من **Billing ← Budgets & alerts**.
+   ثم تبويب **Rules**: الصق محتوى `storage.rules` ← **Publish**. إذا طلب منك السماح لـ Storage بقراءة Firestore فوافق.
+6. **التفعيل:** افتح الموقع. تظهر شاشة «تفعيل الأرشيف». أول حساب يُنشأ يصبح **صاحب الأرشيف**، فافعل ذلك فوراً قبل مشاركة الرابط.
+7. **العائلة:** من **الإعدادات ← حسابات الدخول** أنشئ لكل فرد اسم مستخدم وكلمة مرور، وحدّد من يرى، ثم أرسل له الرابط.
+
+## نقل البيانات من نسخة claude.ai
+
+من النسخة القديمة: **الإعدادات ← تنزيل نسخة البيانات (JSON)**. ثم في الموقع الجديد: **الإعدادات ← نقل البيانات من نسخة سابقة** واختر الملف.
+تنتقل الأفراد والمستندات وتواريخها. أما الصور والمرفقات فلا يحملها ذلك الملف، فارفعها من جديد.
+
+## الحماية
+
+- لا يقرأ البيانات أو يعدّلها إلا من لديه حساب في `logins`، ولا ينشئ الحسابات أو يحذفها إلا صاحب الأرشيف (تفرضه `firestore.rules` على الخادم).
+- لو سجّل شخص غريب حساباً في Firebase بنفسه فلن يرى أي شيء.
+- خيار «أفراد محددون فقط» لكل حساب تصفية في الواجهة، وليس حماية على الخادم.
+- روابط الصور طويلة وعشوائية، لكن من يملك رابط صورة بعينه يستطيع فتحها، فلا تنشر روابط الصور.
+
+## إذا نسي صاحب الأرشيف كلمة المرور
+
+من لوحة Firebase: **Firestore Database ← Data ← config ← owner ← Delete document**. افتح الموقع، تظهر شاشة التفعيل من جديد، فأنشئ حساب صاحب الأرشيف. البيانات لا تتأثر.
